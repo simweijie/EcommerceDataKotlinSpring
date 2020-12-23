@@ -34,7 +34,7 @@ gradlew bootrun
 ```
 3) Start http://localhost:3000
 
-## Tech Stack
+## Technology
 - Kotlin
 - Spring
 - React
@@ -48,11 +48,11 @@ gradlew bootrun
 - [ ] Establish compound key to prevent duplicate entries into DB
 
 ## References
-1) Upload
+### Upload
 - https://bezkoder.com/react-file-upload-spring-boot/
 - https://bezkoder.com/spring-boot-upload-csv-file/
-2) Paginate
+### Paginate
 - https://bezkoder.com/spring-boot-pagination-filter-jpa-pageable/
 - https://bezkoder.com/react-pagination-material-ui/
-3) Unit test for /upload
+### Unit test for /upload
 - https://www.baeldung.com/spring-multipart-post-request-test
