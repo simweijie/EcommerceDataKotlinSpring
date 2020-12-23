@@ -17,6 +17,7 @@ repositories {
 }
 
 dependencies {
+	implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.21")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-data-rest")
 	implementation("org.springframework.boot:spring-boot-starter-web")
@@ -25,9 +26,14 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
+	implementation("commons-io:commons-io:2.8.0")
 	runtimeOnly("com.h2database:h2")
 	runtimeOnly ("mysql:mysql-connector-java")
+	testImplementation(kotlin("test-js"))
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation(platform("org.junit:junit-bom:5.7.0"))
+	testImplementation("org.junit.jupiter:junit-jupiter")
+	testImplementation ("org.mockito:mockito-core:3.6.28")
 }
 
 tasks.withType<KotlinCompile> {

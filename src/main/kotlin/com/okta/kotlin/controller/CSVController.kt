@@ -25,14 +25,15 @@ import kotlin.collections.HashMap
 //@CrossOrigin("http://localhost:8081")
 @CrossOrigin(origins = ["http://localhost:3000","http://localhost:8081","http://localhost:8080"])
 //@CrossOrigin("http://localhost:3000/")
-@Controller
+@RestController
 @RequestMapping("/api/csv")
 class CSVController {
     @Autowired
     var fileService: CSVService? = null
 //    @CrossOrigin("http://localhost:3000/")
     @PostMapping("/upload")
-    fun uploadFile(@RequestParam("file") file: MultipartFile): ResponseEntity<ResponseMessage> {
+//    fun uploadFile(@RequestParam("file") file: MultipartFile): ResponseEntity<ResponseMessage> {
+    fun uploadFile(file: MultipartFile): ResponseEntity<ResponseMessage> {
         var message = ""
         println("HIHI")
         if (CSVHelper.hasCSVFormat(file)) {
@@ -82,7 +83,7 @@ class CSVController {
     @GetMapping("/tutorials/findByInvoiceNo")
     fun findByInvoiceNo(@RequestParam invoiceNo: Optional<String>,
                         @RequestParam(defaultValue = "0") page: Int,
-                        @RequestParam(defaultValue = "3") size: Int,
+                        @RequestParam(defaultValue = "5") size: Int,
                         @RequestParam(defaultValue = "invoiceNo") sort: String): ResponseEntity<Map<String,Any>>{
         try{
 
