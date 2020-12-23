@@ -1,14 +1,5 @@
 package com.okta.kotlin.repository
 
-//import com.okta.kotlin.model.DataSetModel
-//import org.springframework.data.repository.CrudRepository
-//import org.springframework.data.rest.core.annotation.RepositoryRestResource
-//
-//@RepositoryRestResource(collectionResourceRel = "dataset", path = "dataset")
-//interface DataSetRepository : CrudRepository<DataSetModel, Int> {
-//
-//}
-
 import com.okta.kotlin.model.DataSetModel
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

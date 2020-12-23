@@ -4,7 +4,7 @@ package com.okta.kotlin.service
 import com.okta.kotlin.model.DataSetModel
 import com.okta.kotlin.repository.DataSetRepository
 import com.okta.kotlin.helper.CSVHelper
-import com.okta.kotlin.helper.CSVHelper.tutorialsToCSV
+import com.okta.kotlin.helper.CSVHelper.datasetsToCSV
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -22,34 +22,30 @@ class CSVService {
     lateinit var repository: DataSetRepository
     fun save(file: MultipartFile) {
         try {
-            val tutorials: List<DataSetModel> = CSVHelper.csvToTutorials(file.inputStream)
-//            repository.saveAll(tutorials) // ToFix: saveAll does not throw exception, just quietly dies
+            val datasets: List<DataSetModel> = CSVHelper.csvToDatasets(file.inputStream)
+//            repository.saveAll(datasets) // ToFix: saveAll does not throw exception, just quietly dies
             var count : Int = 0
-            for(tutorial in tutorials){
+            for(dataset in datasets){
                 count++
-                println("saving$count")
-                repository.save(tutorial)
+                if(count%1000==0){
+                        println("saving$count")
+                    }
+                repository.save(dataset)
             }
-            println("insertion complete")
         } catch (e: IOException) {
             throw RuntimeException("fail to store csv data: " + e.message)
         } catch (e: IllegalArgumentException){
-            println("dead dog")
             e.printStackTrace()
             throw RuntimeException("fail to store csv data: " + e.message)
         }
     }
 
     fun load(): ByteArrayInputStream {
-        val tutorials: MutableList<DataSetModel> = repository!!.findAll() as MutableList<DataSetModel>
-        return tutorialsToCSV(tutorials)
+        val datasets: MutableList<DataSetModel> = repository.findAll() as MutableList<DataSetModel>
+        return datasetsToCSV(datasets)
     }
 
-//    fun getAllTutorials(): MutableList<DataSetModel> {
-//        return repository.findAll();
-//    }
-
-    fun getAllTutorials(paging: Pageable): Page<DataSetModel> {
+    fun getAllDatasets(paging: Pageable): Page<DataSetModel> {
         return repository.findAll(paging);
     }
 

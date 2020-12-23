@@ -32,25 +32,13 @@ class MultipartPostRequestControllerUnitTest {
     fun whenFileUploaded_thenVerifyStatus(){
         println("WHERE MY PRINT")
         var csvFile: MockMultipartFile  = MockMultipartFile("hello.csv","hello.csv","text/csv","536365,85123A,WHITE HANGING HEART T-LIGHT HOLDER,6,12/1/2010 8:26,2.55,17850,United Kingdom".toByteArray())
-
-        val builder = MockMvcRequestBuilders.multipart("/api/csv/upload");
-        println(csvFile)
-
         var mockMvc: MockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-//        var result: MvcResult = mockMvc.perform(multipart("/api/csv/upload")."lolzxs").andReturn();
+
         var result: MvcResult = mockMvc.perform(multipart("/api/csv/upload").file(csvFile)).andReturn();
-//        var result: MvcResult = mockMvc.perform(post("api/csv/upload").param("file",csvFile)
-          //original
-//        mockMvc.perform(multipart("/api/csv/upload").file(file)).andExpect(status().isOk);
         println("WHERE MY PRINT 2")
         println(result.response.contentAsString)
 
-
-
-
-//        var file: MockMultipartFile  = MockMultipartFile("file","hello.txt",MediaType.TEXT_PLAIN_VALUE,"Hello, World!".toByteArray())
-//
-//        var mockMvc: MockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+          //original
 //        mockMvc.perform(multipart("/api/csv/upload").file(file)).andExpect(status().isOk);
     }
 }
