@@ -13,8 +13,8 @@ MySQL (CE v8.0.22.0)
 
 ### Setup
 1) Create an empty folder and clone both projects:
-- EcommerceDataReact: https://github.com/simweijie/EcommerceDataReact
-- EcommerceDataKotlinSpring: https://github.com/simweijie/EcommerceDataKotlinSpring
+    - EcommerceDataReact: https://github.com/simweijie/EcommerceDataReact
+    - EcommerceDataKotlinSpring: https://github.com/simweijie/EcommerceDataKotlinSpring
 2) Register an account and download data.csv file from https://www.kaggle.com/carrie1/ecommerce-data/
 3) Ensure that the MySQL server is running with following created:
 ```
