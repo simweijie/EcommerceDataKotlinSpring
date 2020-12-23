@@ -13,6 +13,10 @@ Web Application providing the following functionality:
 1) Create an empty folder and clone both projects:
     - EcommerceDataReact: https://github.com/simweijie/EcommerceDataReact
     - EcommerceDataKotlinSpring: https://github.com/simweijie/EcommerceDataKotlinSpring
+2) Install the necessary node modules. At the root folder of EcommerceDataReact run:
+```
+yarn install
+```
 2) Register an account and download data.csv file from https://www.kaggle.com/carrie1/ecommerce-data/
 3) Ensure that the MySQL server is running with following created:
     - Schema: testdb
@@ -23,11 +27,11 @@ Web Application providing the following functionality:
 
 
 ## Development
-1) FrontEnd: From the root folder of EcommerceDataReact run:
+1) From the root folder of EcommerceDataReact run:
 ```
 yarn start
 ```
-2) BackEnd: From the root folder of EcommerceDataKotlinSpring run:
+2) From the root folder of EcommerceDataKotlinSpring run:
 ```
 gradlew bootrun
 ```
