@@ -22,9 +22,12 @@ yarn install
     - Schema: testdb
     - Username: root
     - Password: 123456
-
-
-
+4) Alternatively instead of using the credentials in (3), you may choose to edit the application.properties folder as necessary
+```
+spring.datasource.url
+spring.datasource.username
+spring.datasource.password
+```
 
 ## Development
 1) From the root folder of EcommerceDataReact run:
