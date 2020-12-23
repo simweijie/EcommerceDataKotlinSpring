@@ -1,12 +1,17 @@
-# EcommerceDataKotlinSpring
+# EcommerceData
 
-### Tech Stack
-1) Java 11
-2) Kotlin
-2) Node (v14.15.2)
-3) MySQL (CE v8.0.22.0)
+Web Application providing the following functionality:
+1) Upload & Listing of CSV data 
 
-## Setup
+## Getting Started
+### Prerequisites
+```
+Java 11
+Node (v14.15.2)
+MySQL (CE v8.0.22.0)
+```
+
+### Setup
 1) Create an empty folder and clone both EcommerceDataReact & EcommerceDataKotlinSpring 
 2) Register an account and download data.csv file from https://www.kaggle.com/carrie1/ecommerce-data/
 3) Ensure that the MySQL server is running with following created:
@@ -18,16 +23,22 @@ Password: 123456
 
 
 
-## Starting Up
-1) FrontEnd: From the root folder of EcommerceDataReact enter the following into the terminal:
+## Development
+1) FrontEnd: From the root folder of EcommerceDataReact run:
 ```
 yarn start
 ```
-2) BackEnd: From the root folder of EcommerceDataKotlinPsring enter the following into the terminal:
+2) BackEnd: From the root folder of EcommerceDataKotlinSpring run:
 ```
 gradlew bootrun
 ```
 3) Start http://localhost:3000
+
+## Tech Stack
+- Kotlin
+- Spring
+- React
+- MySQL
   
 ## To Fix
 - [ ] /upload unit test
