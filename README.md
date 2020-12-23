@@ -47,5 +47,5 @@ gradlew bootrun
 - [ ] /upload unit test
 - [ ] Improve progress bar and user feedback on progress
 - [ ] Expand search functionality
-- [ ] Improve insertion time into DB
+- [ ] Improve insertion time into DB, currently ~1000 records/25s
 - [ ] Establish compound key to prevent duplicate entries into DB
