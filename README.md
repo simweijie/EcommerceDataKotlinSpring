@@ -1,7 +1,7 @@
 # EcommerceData
 
 Web Application providing the following functionality:
-1) Upload & Listing of CSV data 
+- Upload & Listing of CSV data 
 
 ## Getting Started
 ### Prerequisites
